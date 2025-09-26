@@ -12,6 +12,7 @@
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     pavucontrol
+    gitui
   ];
 
   home.file = {
@@ -46,6 +47,10 @@
     };
     "waybar" = {
       source = ./configs/waybar;
+      recursive = true;
+    };
+    "gitui" = {
+      source = ./configs/gitui;
       recursive = true;
     };
   };
