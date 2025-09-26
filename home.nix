@@ -27,30 +27,26 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    "Pictures/Wallpapers" = {
-      source = ./assets/wallpapers;
-      recursive = true;
-    };
 
-    ".zshrc".source = ./configs/zshrc;
-    ".p10k.zsh".source = ./configs/p10k.zsh;
+    ".zshrc".source = ./home/.zshrc;
+    ".p10k.zsh".source = ./home/.p10k.zsh;
     ".scripts" = {
-      source = ./scripts;
+      source = ./home/scripts;
       recursive = true;
     };
   };
 
   xdg.configFile = {
     "hypr" = {
-      source = ./configs/hypr;
+      source = ./config/hypr;
       recursive = true;
     };
     "waybar" = {
-      source = ./configs/waybar;
+      source = ./config/waybar;
       recursive = true;
     };
     "gitui" = {
-      source = ./configs/gitui;
+      source = ./config/gitui;
       recursive = true;
     };
   };
