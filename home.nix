@@ -13,6 +13,8 @@
     nerd-fonts.jetbrains-mono
     pavucontrol
     gitui
+    networkmanagerapplet
+    nordzy-cursor-theme
   ];
 
   home.file = {
@@ -27,11 +29,14 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-
     ".zshrc".source = ./home/.zshrc;
     ".p10k.zsh".source = ./home/.p10k.zsh;
     ".scripts" = {
       source = ./home/scripts;
+      recursive = true;
+    };
+    "Pictures/Wallpapers" = {
+      source = ./home/wallpapers;
       recursive = true;
     };
   };
@@ -78,25 +83,28 @@
         background = "#0a081b";
         cursor = "#9da5c1";
 
-        color0 = " #0a081b";
-        color8 = " #6d7387";
-        color1 = " #204578";
-        color9 = " #244578";
-        color2 = " #5F4869";
-        color10 = " #5F4869";
-        color3 = " #AE3F45";
-        color11 = " #AE3F45";
-        color4 = " #A15358";
-        color12 = " #A15358";
-        color5 = " #E8B161";
-        color13 = " #E8B161";
-        color6 = " #1C5296";
-        color14 = " #1C5296";
-        color7 = " #9da5c1";
-        color15 = " #9da5c1";
+        color0 = "#1a152e";
+        color1 = "#3a629d";
+        color2 = "#7a5e7f";
+        color3 = "#c35a60";
+        color4 = "#b46b70";
+        color5 = "#f0c47a";
+        color6 = "#2a68b3";
+        color7 = "#b0b7d4";
+        color8 = "#6d7387";
+        color9 = "#244578";
+        color10 = "#5F4869";
+        color11 = "#AE3F45";
+        color12 = "#A15358";
+        color13 = "#E8B161";
+        color14 = "#1C5296";
+        color15 = "#9da5c1";
       };
     };
-    waybar.enable = true;
+    waybar = {
+      enable = true;
+      settings = {};
+    };
     git = {
       enable = true;
       userName = "REVO9";
@@ -107,8 +115,32 @@
   gtk = {
     enable = true;
     colorScheme = "dark";
-    font.name = "JetBrains Mono";
-    font.size = 11;
+    iconTheme = {
+      name = "adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+    cursorTheme ={
+        name = "Nordzy-cursors";
+      package = pkgs.nordzy-cursor-theme;
+    };
+    theme = {
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
+  };
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+  };
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = with pkgs; [
+        xdg-desktop-portal
+        xdg-desktop-portal-hyprland
+      ];
+      config.common.default = "*";
+    };
   };
 
   fonts.fontconfig.enable = true;

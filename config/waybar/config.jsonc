@@ -237,8 +237,8 @@
         // "format-linked": "󰈀 {ifname} (No IP)",
         // "tooltip-format-ethernet":"Interface: {ifname}\nIP: {ipaddr}\nGW: {gwaddr}\nNetmask: {netmask}\nCIDR: {cidr}\n\n<span color='#a6da95'>{bandwidthUpBits}</span>\t<span color='#ee99a0'>{bandwidthDownBits}</span>\t<span color='#c6a0f6'>󰹹{bandwidthTotalBits}</span>",
         "max-length": 35,
-        "on-click": "fish -c wifi_toggle",
-        "on-click-right": "iwgtk",
+        "on-click": "~/.scripts/wifi_toggle.sh",
+        "on-click-right": "nm-connection-editor",
     },
 
     "group/audio": {
@@ -268,8 +268,8 @@
         "menu": "on-click",
         "menu-file": "~/.config/waybar/logout_menu.xml",
         "menu-actions": {
-             "shutdown": "shutdown",
-             "reboot": "reboot",
+             "shutdown": "systemctl poweroff",
+             "reboot": "systemctl reboot",
              "suspend": "systemctl suspend",
              "hibernate": "systemctl hibernate",
         },
