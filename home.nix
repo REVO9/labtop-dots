@@ -15,6 +15,8 @@
     gitui
     networkmanagerapplet
     nordzy-cursor-theme
+    xfce.thunar
+    hyprpicker
   ];
 
   home.file = {
@@ -114,18 +116,19 @@
 
   gtk = {
     enable = true;
-    colorScheme = "dark";
+    # rose pine is inverted
+    colorScheme = "light";
     iconTheme = {
-      name = "adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = "rose-pine";
+      package = pkgs.rose-pine-icon-theme;
     };
     cursorTheme ={
         name = "Nordzy-cursors";
       package = pkgs.nordzy-cursor-theme;
     };
     theme = {
-      name = "Nordic";
-      package = pkgs.nordic;
+      name = "rose-pine";
+      package = pkgs.rose-pine-gtk-theme;
     };
   };
   qt = {
