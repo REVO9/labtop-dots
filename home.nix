@@ -18,11 +18,13 @@
     networkmanagerapplet
     nordzy-cursor-theme
     xfce.thunar
+    xfce.tumbler
     hyprpicker
     blueman
     grim
     slurp
     imagemagick
+    mpv
   ];
 
   home.file = {

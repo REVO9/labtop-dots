@@ -13,7 +13,7 @@ layer=overlay
 
 background-color=#0a081bC0
 text-color=#cad3f5
-border-color=#494974
+border-color=#494974C0
 progress-color=over #86cBf0
 
 [urgency=high]
