@@ -5,7 +5,7 @@
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 36, // Waybar height (to be removed for auto height)
     "spacing": 4, // Gaps between modules (4px)
-    "modules-left": ["hyprland/workspaces", "group/hardware"],
+    "modules-left": ["hyprland/workspaces", "group/hardware", "tray"],
     "modules-center": ["clock#time", "custom/separator", "clock#week", "custom/separator_dot", "clock#month", "custom/separator", "clock#calendar"],
     "modules-right": [ "group/connection", "group/audio", "custom/logout_menu" ],
 
@@ -196,7 +196,6 @@
                 "󰕾",
             ],
         },
-        "reverse-mouse-scrolling": true,
         "on-click": "pavucontrol",
     },
 
@@ -273,5 +272,10 @@
              "suspend": "systemctl suspend",
              "hibernate": "systemctl hibernate",
         },
+    },
+
+    "tray":{
+        "icon-size": 20,
+        "spacing": 2,
     },
 },

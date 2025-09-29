@@ -11,18 +11,12 @@
 
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
-    (writeShellScriptBin "pavucontrol" ''
-      GTK_THEME=Adwaita:dark ${pkgs.pavucontrol}/bin/pavucontrol "$@"
-    '')
+    pavucontrol
     gitui
     networkmanagerapplet
     nordzy-cursor-theme
-    xfce.thunar
+    kdePackages.dolphin
     hyprpicker
-    blueman
-    grim
-    slurp
-    imagemagick
   ];
 
   home.file = {
@@ -62,22 +56,14 @@
       source = ./config/gitui;
       recursive = true;
     };
-    "vesktop/themes/rose-pine.css".source =
+    "vesktop/themes".source =
       pkgs.fetchFromGitHub {
         owner = "rose-pine";
         repo = "discord";
         rev = "main";
-        sha256 = "00sz681dd3jm1vjga6wcj2jv0ninm8bms9jkz5fax1p6nm6bvlrr";
       }
       + "/dist/rose-pine.css";
-    "mako/config".source = ./config/mako/config;
-    "wofi" = {
-      source = ./config/wofi;
-      recursive = true;
-    };
   };
-
-  xdg.dataFile."fonts/Rodondo.otf".source = ./fonts/Rodondo.otf;
 
   home.sessionVariables = {
   };
@@ -135,7 +121,6 @@
     };
     vesktop = {
       enable = true;
-      settings.enabledThemes = "[ rose-pine.css ]";
     };
   };
 
@@ -169,28 +154,6 @@
       ];
       config.common.default = "*";
     };
-  };
-
-  services = {
-    udiskie = {
-      enable = true;
-      settings = {
-        program_options = {
-          tray = true;
-        };
-      };
-    };
-    blueman-applet.enable = true;
-    mako.enable = true;
-  };
-
-  xdg.desktopEntries.pavucontrol = {
-    name = "Volume Control";
-    exec = "${pkgs.writeShellScriptBin "pavucontrol" ''
-      GTK_THEME=Adwaita:dark ${pkgs.pavucontrol}/bin/pavucontrol "$@"
-    ''}/bin/pavucontrol %U";
-    icon = "multimedia-volume-control";
-    categories = ["AudioVideo" "Audio" "Mixer"];
   };
 
   fonts.fontconfig.enable = true;
