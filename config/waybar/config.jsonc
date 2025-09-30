@@ -1,3 +1,4 @@
+// based on https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles
 {
     // Main Config
     "name": "top_bar",

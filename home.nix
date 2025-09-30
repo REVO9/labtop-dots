@@ -4,10 +4,14 @@
   lib,
   ...
 }: {
+  imports = [
+    ./theme.nix
+    ./config.nix
+  ];
+
   home.username = "revo";
   home.homeDirectory = "/home/revo";
-
-  home.stateVersion = "25.05"; # Please read the comment before changing.
+  home.stateVersion = "25.05";
 
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -28,17 +32,6 @@
   ];
 
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-
     ".zshrc".source = ./home/.zshrc;
     ".p10k.zsh".source = ./home/.p10k.zsh;
     ".scripts" = {
@@ -51,38 +44,9 @@
     };
   };
 
-  xdg.configFile = {
-    "hypr" = {
-      source = ./config/hypr;
-      recursive = true;
-    };
-    "waybar" = {
-      source = ./config/waybar;
-      recursive = true;
-    };
-    "gitui" = {
-      source = ./config/gitui;
-      recursive = true;
-    };
-    "vesktop/themes/rose-pine.css".source =
-      pkgs.fetchFromGitHub {
-        owner = "rose-pine";
-        repo = "discord";
-        rev = "main";
-        sha256 = "00sz681dd3jm1vjga6wcj2jv0ninm8bms9jkz5fax1p6nm6bvlrr";
-      }
-      + "/dist/rose-pine.css";
-    "mako/config".source = ./config/mako/config;
-    "wofi" = {
-      source = ./config/wofi;
-      recursive = true;
-    };
-  };
-
   xdg.dataFile."fonts/Rodondo.otf".source = ./fonts/Rodondo.otf;
 
-  home.sessionVariables = {
-  };
+  home.sessionVariables = {};
 
   home.sessionPath = [
     "$HOME/.local/bin"
@@ -90,97 +54,10 @@
     "$HOME/.scripts/"
   ];
 
-  programs = {
-    kitty = {
-      enable = true;
-      settings = {
-        font_family = "JetBrains Mono Nerd Font";
-        font_size = 11;
-        background_opacity = 0.75;
-        confirm_os_window_close = 0;
-
-        resize_debounce_time = 0.0;
-
-        cursor_trail = 1;
-        cursor_trail_start_threshold = 0;
-
-        foreground = "#9da5c1";
-        background = "#0a081b";
-        cursor = "#9da5c1";
-
-        color0 = "#1a152e";
-        color1 = "#3a629d";
-        color2 = "#7a5e7f";
-        color3 = "#c35a60";
-        color4 = "#b46b70";
-        color5 = "#f0c47a";
-        color6 = "#2a68b3";
-        color7 = "#b0b7d4";
-        color8 = "#6d7387";
-        color9 = "#244578";
-        color10 = "#5F4869";
-        color11 = "#AE3F45";
-        color12 = "#A15358";
-        color13 = "#E8B161";
-        color14 = "#1C5296";
-        color15 = "#9da5c1";
-      };
-    };
-    waybar = {
-      enable = true;
-      settings = {};
-    };
-    git = {
-      enable = true;
-      userName = "REVO9";
-      userEmail = "luisdanker@gmx.de";
-    };
-    vesktop = {
-      enable = true;
-      settings.enabledThemes = "[ rose-pine.css ]";
-    };
-  };
-
-  gtk = {
-    enable = true;
-    # rose pine is inverted
-    colorScheme = "light";
-    iconTheme = {
-      name = "rose-pine";
-      package = pkgs.rose-pine-icon-theme;
-    };
-    cursorTheme = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
-    };
-    theme = {
-      name = "rose-pine";
-      package = pkgs.rose-pine-gtk-theme;
-    };
-  };
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk";
-  };
-  xdg = {
-    portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal
-        xdg-desktop-portal-hyprland
-      ];
-      config.common.default = "*";
-    };
-  };
-
   services = {
     udiskie = {
       enable = true;
-      settings = {
-        program_options = {
-          tray = true;
-        };
-      };
+      settings.program_options.tray = true;
     };
     blueman-applet.enable = true;
     mako.enable = true;
@@ -193,6 +70,15 @@
     ''}/bin/pavucontrol %U";
     icon = "multimedia-volume-control";
     categories = ["AudioVideo" "Audio" "Mixer"];
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal
+      xdg-desktop-portal-hyprland
+    ];
+    config.common.default = "*";
   };
 
   fonts.fontconfig.enable = true;
