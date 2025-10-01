@@ -7,7 +7,8 @@
     --fg-main: #e0def4;
     --fg-muted: #908caa;
 
-    --border: #6e6a86;
+    --border: alpha(#494974, 0.75);
+    --active-border: #E8B161;
 
     --accent-critical: #eb6f92;
     --accent-critical-alt: #ebbcba;
@@ -31,6 +32,9 @@
     background-color: var(--bg-main);
     color: var(--fg-main);
     border: 2px solid var(--border);
+}
+.floating-notifications.background .notification-row .notification-background:hover {
+    border: 2px solid var(--active-border);
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
@@ -105,12 +109,12 @@
 }
 
 .control-center {
-    border-radius: 0.5rem;
+    border-radius: 0.7rem;
     margin: 1rem;
     background-color: var(--bg-main);
     color: var(--fg-main);
     padding: 1rem;
-    border: 1px solid var(--border);
+    border: 2px solid var(--active-border);
 }
 
 .control-center .widget-title {
