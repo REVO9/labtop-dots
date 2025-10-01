@@ -24,7 +24,6 @@
         sha256 = "00sz681dd3jm1vjga6wcj2jv0ninm8bms9jkz5fax1p6nm6bvlrr";
       }
       + "/dist/rose-pine.css";
-    "mako/config".source = ./config/mako/config;
     "wofi" = {
       source = ./config/wofi;
       recursive = true;

@@ -20,7 +20,6 @@
       GTK_THEME=Adwaita:dark ${pkgs.pavucontrol}/bin/pavucontrol "$@"
     '')
     gitui
-    networkmanagerapplet
     nordzy-cursor-theme
     xfce.thunar
     xfce.tumbler
