@@ -7,6 +7,7 @@
   imports = [
     ./theme.nix
     ./config.nix
+    ./fastfetch.nix
   ];
 
   home.username = "revo";
@@ -60,7 +61,10 @@
       settings.program_options.tray = true;
     };
     blueman-applet.enable = true;
-    mako.enable = true;
+    network-manager-applet.enable = true;
+    swaync = {
+      enable = true;
+    };
   };
 
   xdg.desktopEntries.pavucontrol = {

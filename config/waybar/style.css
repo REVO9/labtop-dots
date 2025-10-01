@@ -227,6 +227,16 @@ window.top_bar .modules-center {
     margin-right: 4;
 }
 
+#custom-notification {
+    background-color: alpha(@surface1, 0.7);
+    border-radius: 15;
+    padding: 0;
+    padding-left: 10;
+    padding-right: 10;
+    margin-top: 5;
+    margin-bottom: 5;
+}
+
 #custom-logout_menu {
     color: @red;
     background-color: alpha(@surface1, 0.7);

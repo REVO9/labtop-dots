@@ -1,0 +1,251 @@
+:root {
+    --bg-main: alpha(#0a081b, 0.75);
+    --bg-alt: alpha(#494974, 0.75);
+    --bg-hover: alpha(#494974, 1.0);
+    --bg-active: #6e6a86;
+
+    --fg-main: #e0def4;
+    --fg-muted: #908caa;
+
+    --border: #6e6a86;
+
+    --accent-critical: #eb6f92;
+    --accent-critical-alt: #ebbcba;
+    --accent-info: #9ccfd8;
+    --accent-checked: #31748f;
+}
+
+* {
+    all: unset;
+    font-family: JetbrainsMono Nerd Font;
+    transition: 0.3s;
+    font-size: 1.0rem;
+}
+
+.floating-notifications.background .notification-row {
+    padding: 0.5rem;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+    border-radius: 1.0rem;
+    background-color: var(--bg-main);
+    color: var(--fg-main);
+    border: 2px solid var(--border);
+}
+
+.floating-notifications.background .notification-row .notification-background .notification {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+
+.floating-notifications.background .notification-row .notification-background .notification .notification-content .summary {
+    margin: 0.5rem;
+    color: var(--fg-main);
+    font-weight: bold;
+}
+
+.floating-notifications.background .notification-row .notification-background .notification .notification-content .body {
+    margin: 0.5rem;
+    margin-top: 0rem;
+    color: var(--fg-muted);
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* {
+    min-height: 3rem;
+}
+
+/* .floating-notifications.background */
+/*   .notification-row */
+/*   .notification-background */
+/*   .notification */
+/*   > *:last-child */
+/*   > * */
+.notification-action {
+    border-radius: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--fg-main);
+    background-color: var(--bg-alt);
+}
+
+/* .floating-notifications.background */
+/*   .notification-row */
+/*   .notification-background */
+/*   .notification */
+/*   > *:last-child */
+/*   > * */
+.notification-action:hover {
+    background-color: var(--bg-hover);
+}
+
+.floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
+    background-color: var(--bg-active);
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button {
+    margin: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    color: var(--fg-main);
+    background-color: var(--accent-critical);
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button:hover {
+    color: var(--bg-main);
+}
+
+.floating-notifications.background .notification-row .notification-background .close-button:active {
+    background-color: var(--accent-critical-alt);
+}
+
+.image {
+    margin-left: 0.5rem;
+}
+
+.control-center {
+    border-radius: 0.5rem;
+    margin: 1rem;
+    background-color: var(--bg-main);
+    color: var(--fg-main);
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+.control-center .widget-title {
+    color: var(--accent-critical-alt);
+    font-weight: bold;
+}
+
+.control-center .widget-title button {
+    border-radius: 0.5rem;
+    color: var(--fg-main);
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border);
+    padding: 0.5rem;
+}
+
+.control-center .widget-title button:hover {
+    background-color: var(--bg-hover);
+}
+
+.control-center .widget-title button:active {
+    background-color: var(--bg-active);
+}
+
+.control-center .notification-row .notification-background {
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    background-color: var(--bg-alt);
+    color: var(--fg-main);
+    border: 1px solid var(--border);
+}
+
+.control-center .notification-row .notification-background .notification {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content {
+    color: var(--fg-main);
+}
+
+.control-center .notification-row .notification-background .notification .notification-content .summary {
+    margin: 0.5rem;
+    color: var(--fg-main);
+    font-weight: bold;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content .body {
+    margin: 0.5rem;
+    color: var(--fg-muted);
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* {
+    min-height: 3rem;
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
+    border-radius: 0.5rem;
+    color: var(--fg-main);
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border);
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
+    background-color: var(--bg-hover);
+}
+
+.control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
+    background-color: var(--bg-active);
+}
+
+.control-center .notification-row .notification-background .close-button {
+    margin: 0.5rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    color: var(--fg-main);
+    background-color: var(--accent-critical);
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+    color: var(--bg-main);
+}
+
+.control-center .notification-row .notification-background .close-button:active {
+    background-color: var(--accent-critical-alt);
+}
+
+progressbar,
+progress,
+trough {
+    border-radius: 0.5rem;
+}
+
+.notification.critical progress {
+    background-color: var(--accent-critical);
+}
+
+.notification.low progress,
+.notification.normal progress {
+    background-color: var(--accent-info);
+}
+
+trough {
+    background-color: var(--bg-alt);
+}
+
+.control-center trough {
+    background-color: var(--border);
+}
+
+.control-center-dnd {
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+}
+
+.control-center-dnd slider {
+    background: var(--bg-hover);
+    border-radius: 0.5rem;
+}
+
+.widget-dnd {
+    color: var(--fg-muted);
+}
+
+.widget-dnd>switch {
+    border-radius: 0.5rem;
+    background: var(--bg-hover);
+    border: 1px solid var(--border);
+}
+
+.widget-dnd>switch:checked slider {
+    background: var(--accent-checked);
+}
+
+.widget-dnd>switch slider {
+    background: var(--bg-active);
+    border-radius: 0.5rem;
+    margin: 0.25rem;
+}

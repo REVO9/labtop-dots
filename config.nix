@@ -29,6 +29,10 @@
       source = ./config/wofi;
       recursive = true;
     };
+    "swaync" = {
+      source = ./config/swaync;
+      recursive = true;
+    };
   };
 
   programs = {
