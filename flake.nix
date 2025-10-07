@@ -8,9 +8,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprgrass = {
+       url = "github:horriblename/hyprgrass";
+       inputs.hyprland.follows = "hyprland";
+    };
   };
 
-  outputs = {
+  outputs =inputs@ {
     nixpkgs,
     home-manager,
     ...
@@ -25,8 +31,9 @@
       # the path to your home.nix.
       modules = [./home.nix];
 
-      # Optionally use extraSpecialArgs
-      # to pass through arguments to home.nix
+      extraSpecialArgs = {
+        inherit inputs;
+      };
     };
   };
 }

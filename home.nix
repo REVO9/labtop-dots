@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   imports = [
@@ -29,6 +30,16 @@
     slurp
     imagemagick
     mpv
+    rnote
+    onboard
+    thunderbird
+
+    # terminal fluff
+    cava
+    unimatrix
+    cbonsai
+    lolcat
+    figlet
   ];
 
   home.file = {
@@ -82,6 +93,16 @@
       xdg-desktop-portal-hyprland
     ];
     config.common.default = "*";
+  };
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+
+    plugins = [
+      inputs.hyprgrass.packages.${pkgs.system}.default
+    ];
+
+    settings= { bind = []; };
   };
 
   fonts.fontconfig.enable = true;
