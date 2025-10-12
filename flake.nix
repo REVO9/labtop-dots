@@ -11,12 +11,12 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprgrass = {
-       url = "github:horriblename/hyprgrass";
-       inputs.hyprland.follows = "hyprland";
+      url = "github:horriblename/hyprgrass";
+      inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
   };
 
-  outputs =inputs@ {
+  outputs = inputs @ {
     nixpkgs,
     home-manager,
     ...

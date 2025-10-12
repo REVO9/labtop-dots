@@ -31,7 +31,7 @@
     imagemagick
     mpv
     rnote
-    onboard
+    wvkbd
     thunderbird
 
     # terminal fluff
@@ -90,19 +90,26 @@
     enable = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal
-      xdg-desktop-portal-hyprland
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
     ];
     config.common.default = "*";
   };
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
-    plugins = [
+    plugins = with pkgs; [
       inputs.hyprgrass.packages.${pkgs.system}.default
+      # hyprlandPlugins.hyprgrass
     ];
 
-    settings= { bind = []; };
+    settings = {
+      source = [
+        "~/.config/hypr/main.conf"
+      ];
+    };
   };
 
   fonts.fontconfig.enable = true;

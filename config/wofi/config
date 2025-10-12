@@ -17,3 +17,4 @@ image_size=20
 display_generic=false
 location=center
 insensitive=true
+normal_window=true
