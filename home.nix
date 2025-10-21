@@ -33,6 +33,12 @@
     rnote
     wvkbd
     thunderbird
+    libreoffice
+    evince
+    zathura
+    tectonic
+    texlab
+    inkscape
 
     # terminal fluff
     cava
@@ -93,6 +99,18 @@
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland
     ];
     config.common.default = "*";
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "librewolf.desktop";
+      "x-scheme-handler/http" = "librewolf.desktop";
+      "x-scheme-handler/https" = "librewolf.desktop";
+      "x-scheme-handler/about" = "librewolf.desktop";
+      "x-scheme-handler/unknown" = "librewolf.desktop";
+      "application/pdf" = "org.gnome.Evince.desktop";
+    };
   };
 
   wayland.windowManager.hyprland = {
