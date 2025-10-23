@@ -109,12 +109,14 @@
 }
 
 .control-center {
-    border-radius: 0.7rem;
+    border-radius: 0.7rem 0 0 0.7rem;
     margin: 1rem;
+    margin-right: 0;
     background-color: var(--bg-main);
     color: var(--fg-main);
     padding: 1rem;
     border: 2px solid var(--active-border);
+    border-right: none;
 }
 
 .control-center .widget-title {
