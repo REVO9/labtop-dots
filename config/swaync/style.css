@@ -23,18 +23,26 @@
     font-size: 1.0rem;
 }
 
+.floating-notifications.background {
+    margin-top: 0.5rem;
+}
+
 .floating-notifications.background .notification-row {
     padding: 0.5rem;
+    padding-right: 0rem;
 }
 
 .floating-notifications.background .notification-row .notification-background {
-    border-radius: 1.0rem;
+    border-radius: 1.0rem 0 0 1.0rem;
     background-color: var(--bg-main);
     color: var(--fg-main);
     border: 2px solid var(--border);
+    border-right: none;
 }
+
 .floating-notifications.background .notification-row .notification-background:hover {
     border: 2px solid var(--active-border);
+    border-right: none;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {

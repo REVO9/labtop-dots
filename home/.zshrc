@@ -99,6 +99,8 @@ mkcd() {
     cd "$1"
 }
 alias icat="wezterm imgcat"
+alias fm="sus thunar ."
+alias fme="sus thunar .; exit"
 
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 

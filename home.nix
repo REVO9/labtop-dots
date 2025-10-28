@@ -39,6 +39,7 @@
     tectonic
     texlab
     inkscape
+    gnome-network-displays
 
     # terminal fluff
     cava
