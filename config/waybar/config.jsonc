@@ -6,7 +6,7 @@
 	"position": "top", // Waybar position (top|bottom|left|right)
 	"height": 36, // Waybar height (to be removed for auto height)
 	"spacing": 4, // Gaps between modules (4px)
-	"modules-left": ["hyprland/workspaces", "group/hardware", "tray"],
+	"modules-left": ["hyprland/workspaces", "group/hardware"],
 	"modules-center": [
 		"clock#time",
 		"custom/separator",
@@ -16,7 +16,7 @@
 		"custom/separator",
 		"clock#calendar"
 	],
-	"modules-right": ["group/connection", "group/audio",  "custom/notification","custom/logout_menu"],
+	"modules-right": ["tray", "group/audio",  "custom/notification","custom/logout_menu"],
 
 	"hyprland/workspaces": {
 		"on-click": "activate",
