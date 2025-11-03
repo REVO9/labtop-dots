@@ -34,6 +34,7 @@
     wvkbd
     thunderbird
     libreoffice
+    wasistlos
     evince
     zathura
     tectonic
