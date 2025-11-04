@@ -11,6 +11,8 @@
     ./fastfetch.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home.username = "revo";
   home.homeDirectory = "/home/revo";
   home.stateVersion = "25.05";
@@ -112,6 +114,15 @@
       "x-scheme-handler/about" = "librewolf.desktop";
       "x-scheme-handler/unknown" = "librewolf.desktop";
       "application/pdf" = "org.gnome.Evince.desktop";
+    };
+  };
+
+  xdg.desktopEntries = {
+    steam-bigpicture = {
+      name = "Steam Big Picture Mode";
+      comment = "Start Steam in Big Picture Mode";
+      exec = "${pkgs.gamescope}/bin/gamescope -e -W 1920 -H 1200 -- ${pkgs.steam}/bin/steam -tenfoot";
+      type = "Application";
     };
   };
 
