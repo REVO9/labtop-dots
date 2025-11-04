@@ -1,39 +1,34 @@
 {
-  description = "Home Manager configuration of revo";
+  description = "Nixos config flake";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprland.url = "github:hyprwm/Hyprland";
+    matcha.url = "git+https://codeberg.org/QuincePie/matcha.git";
     hyprgrass = {
       url = "github:horriblename/hyprgrass";
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ {
+  outputs = {
+    self,
     nixpkgs,
-    home-manager,
     ...
-  }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    homeConfigurations."revo" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-
-      # Specify your home configuration modules here, for example,
-      # the path to your home.nix.
-      modules = [./home.nix];
-
-      extraSpecialArgs = {
-        inherit inputs;
-      };
+  } @ inputs: {
+    # use "nixos", or your hostname as the name of the configuration
+    # it's a better practice than "default" shown in the video
+    nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./configuration.nix
+        inputs.home-manager.nixosModules.default
+      ];
     };
   };
 }
