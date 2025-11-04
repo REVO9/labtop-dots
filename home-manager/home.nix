@@ -133,7 +133,6 @@
 
     plugins = with pkgs; [
       inputs.hyprgrass.packages.${pkgs.system}.default
-      # hyprlandPlugins.hyprgrass
     ];
 
     settings = {
