@@ -43,6 +43,7 @@
     texlab
     inkscape
     gnome-network-displays
+    songrec
 
     # terminal fluff
     cava
