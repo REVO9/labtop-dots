@@ -494,13 +494,31 @@
         "type": "github"
       }
     },
+    "rnote-pinned": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762559994,
+        "narHash": "sha256-GtRKDm1o1QiOMEYWZCbXvQhTsXjdfd472QsVh4qwwbM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "2a97eb701ae3357d9e3c4133b7bc3feab06743f0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "2a97eb701ae3357d9e3c4133b7bc3feab06743f0",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "hyprgrass": "hyprgrass",
         "hyprland": "hyprland",
         "matcha": "matcha",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "rnote-pinned": "rnote-pinned"
       }
     },
     "systems": {

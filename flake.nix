@@ -14,11 +14,17 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    rnote-pinned = {
+      url = "github:nixos/nixpkgs/2a97eb701ae3357d9e3c4133b7bc3feab06743f0";
+      flake = false;
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
+    rnote-pinned,
     ...
   } @ inputs: {
     # use "nixos", or your hostname as the name of the configuration

@@ -4,7 +4,12 @@
   lib,
   inputs,
   ...
-}: {
+}: let
+  pinnedPkgs = import inputs.rnote-pinned {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in {
   imports = [
     ./theme.nix
     ./config.nix
@@ -32,7 +37,7 @@
     slurp
     imagemagick
     mpv
-    rnote
+    pinnedPkgs.rnote
     wvkbd
     thunderbird
     libreoffice
