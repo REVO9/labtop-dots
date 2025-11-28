@@ -93,7 +93,7 @@
     kitty
     git
     gh
-    librewolf
+    librewolf-bin
     zip
     unzip
     nodejs_24
