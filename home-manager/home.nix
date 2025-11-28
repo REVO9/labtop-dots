@@ -49,6 +49,7 @@ in {
     inkscape
     gnome-network-displays
     songrec
+    rsync
 
     # terminal fluff
     cava
