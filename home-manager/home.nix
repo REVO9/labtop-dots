@@ -115,12 +115,16 @@ in {
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
+      "image/jpeg" = "org.gnome.eog.desktop";
+      "image/webp" = "org.gnome.eog.desktop";
+      "image/png" = "org.gnome.eog.desktop";
+      "image/gif" = "org.gnome.eog.desktop";
+      "application/pdf" = "org.gnome.Evince.desktop";
       "text/html" = "librewolf.desktop";
       "x-scheme-handler/http" = "librewolf.desktop";
       "x-scheme-handler/https" = "librewolf.desktop";
       "x-scheme-handler/about" = "librewolf.desktop";
       "x-scheme-handler/unknown" = "librewolf.desktop";
-      "application/pdf" = "org.gnome.Evince.desktop";
     };
   };
 
