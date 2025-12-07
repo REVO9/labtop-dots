@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo echo ""
+sudo -v
 
 PWD=$(pwd)
 FLAKE_PATH=/etc/nixos/
