@@ -66,6 +66,11 @@
           "active": true,
           "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && hyprctl dispatch exec hypridle || killall hypridle'",
           "update-command": "sh -c '[[ $(pidof hypridle) ]] && echo true || echo false'"
+        },
+        {
+          "label": "Screenshot",
+          "type": "normal",
+          "command": "swaync-client -cp; ~/.scripts/screenshot.sh"
         }
       ]
     }

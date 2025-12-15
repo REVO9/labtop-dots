@@ -50,6 +50,9 @@ in {
     gnome-network-displays
     songrec
     rsync
+    obs-studio
+    typst
+    qutebrowser
 
     # terminal fluff
     cava
