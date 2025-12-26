@@ -53,6 +53,7 @@ in {
     obs-studio
     typst
     qutebrowser
+    eduvpn-client
 
     # terminal fluff
     cava
