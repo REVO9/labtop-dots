@@ -56,6 +56,11 @@ in {
           type = "packages";
         }
         {
+          key = "│ {#34} {#37}updated {#keys}│";
+          type = "command";
+          text = "git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos show --no-patch --no-notes --pretty='%cd' --date=human $(git --git-dir=/etc/nixos/.git --work-tree=/etc/nixos rev-list -1 HEAD -- flake.lock)";
+        }
+        {
           key = "│ {#34} {#37}wm      {#keys}│";
           type = "wm";
         }
