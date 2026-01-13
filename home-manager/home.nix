@@ -61,6 +61,7 @@ in {
     cbonsai
     lolcat
     figlet
+    tplay
   ];
 
   home.file = {
@@ -74,6 +75,7 @@ in {
       source = ./home/wallpapers;
       recursive = true;
     };
+    "Videos/yippie.gif".source = ./home/yippie.gif;
   };
 
   xdg.dataFile."fonts/Rodondo.otf".source = ./fonts/Rodondo.otf;

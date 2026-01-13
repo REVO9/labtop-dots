@@ -101,6 +101,7 @@ mkcd() {
 alias icat="wezterm imgcat"
 alias fm="sus thunar ."
 alias fme="sus thunar .; exit"
+alias yippie='tplay ~/Videos/yippie.gif'
 
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
