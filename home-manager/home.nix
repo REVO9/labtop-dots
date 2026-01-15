@@ -65,8 +65,8 @@ in {
   ];
 
   home.file = {
-    ".zshrc".source = ./home/.zshrc;
-    ".p10k.zsh".source = ./home/.p10k.zsh;
+    ".zshrc".source = ./config/zshrc;
+    ".p10k.zsh".source = ./config/p10k.zsh;
     ".scripts" = {
       source = ./home/scripts;
       recursive = true;
