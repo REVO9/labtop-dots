@@ -62,6 +62,7 @@ in {
     lolcat
     figlet
     tplay
+    clock-rs
   ];
 
   home.file = {
