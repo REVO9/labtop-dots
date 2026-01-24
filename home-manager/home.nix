@@ -54,6 +54,7 @@ in {
     typst
     qutebrowser
     eduvpn-client
+    prismlauncher
 
     # terminal fluff
     cava
