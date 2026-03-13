@@ -29,8 +29,6 @@ in {
     '')
     gitui
     nordzy-cursor-theme
-    xfce.thunar
-    xfce.tumbler
     hyprpicker
     blueman
     grim
@@ -55,6 +53,9 @@ in {
     qutebrowser
     eduvpn-client
     prismlauncher
+    openscad
+    prusa-slicer
+    signal-desktop
 
     # terminal fluff
     cava
@@ -100,6 +101,7 @@ in {
     swaync = {
       enable = true;
     };
+    mpris-proxy.enable = true;
   };
 
   xdg.desktopEntries.pavucontrol = {

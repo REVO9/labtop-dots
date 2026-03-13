@@ -96,6 +96,7 @@
     librewolf
     zip
     unzip
+    file-roller
     nodejs_24
     psmisc
     playerctl
@@ -159,6 +160,13 @@
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin # Requires an Archive manager like file-roller, ark, etc
+      thunar-volman
+    ];
+  };
 
   # List services that you want to enable:
   services = {
@@ -176,6 +184,7 @@
 
     fwupd.enable = true;
     input-remapper.enable = true;
+    tumbler.enable = true;
   };
   services.pipewire = {
     enable = true;
