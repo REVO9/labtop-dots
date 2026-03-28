@@ -3,6 +3,14 @@
   pkgs,
   ...
 }: {
+  home.pointerCursor = {
+    gtk.enable = true;
+
+    name = "Nordzy-cursors";
+    package = pkgs.nordzy-cursor-theme;
+    size = 16;
+  };
+
   gtk = {
     enable = true;
     colorScheme = "light";
@@ -14,14 +22,18 @@
       name = "Nordzy-cursors";
       package = pkgs.nordzy-cursor-theme;
     };
-    theme = {
+    gtk3.theme = {
+      name = "rose-pine";
+      package = pkgs.rose-pine-gtk-theme;
+    };
+    gtk4.theme = {
       name = "rose-pine";
       package = pkgs.rose-pine-gtk-theme;
     };
   };
 
-  # qt = {
-  #   enable = true;
-  #   platformTheme.name = "gtk";
-  # };
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+  };
 }
