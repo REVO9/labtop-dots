@@ -185,6 +185,11 @@
     fwupd.enable = true;
     input-remapper.enable = true;
     tumbler.enable = true;
+
+    mullvad-vpn = {
+      enable = true;
+      package = pkgs.mullvad-vpn;
+    };
   };
   services.pipewire = {
     enable = true;
