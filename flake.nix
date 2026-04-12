@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/v0.54.3";
     matcha.url = "git+https://codeberg.org/QuincePie/matcha.git";
     hyprgrass = {
       url = "github:horriblename/hyprgrass";
