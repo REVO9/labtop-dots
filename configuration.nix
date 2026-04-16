@@ -109,7 +109,12 @@
     rustc
     rustfmt
     clippy
+    rust-analyzer
     racket
+    jdk25
+    metals
+    coursier
+    scala
 
     wofi
 

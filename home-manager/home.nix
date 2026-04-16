@@ -56,6 +56,7 @@ in {
     openscad
     prusa-slicer
     signal-desktop
+    inputs.lecture-mgr.packages.${system}.default
 
     # terminal fluff
     cava
