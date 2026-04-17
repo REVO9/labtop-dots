@@ -115,6 +115,7 @@
     metals
     coursier
     scala
+    tree-sitter
 
     wofi
 
