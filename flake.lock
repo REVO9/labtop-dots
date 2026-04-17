@@ -484,11 +484,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1776376605,
-        "narHash": "sha256-XOjIf+1zLWA+h3x6PkfBIiuzg58vQfdlxfilMH38C7k=",
+        "lastModified": 1776444006,
+        "narHash": "sha256-6TQrZvj8DHHL1cLtZVmGI+ru5c1/goEyjjDt+xEeI8E=",
         "owner": "REVO9",
         "repo": "lecture-mgr",
-        "rev": "f0f63c609d4ad1d95cd514e6e37b9aa6157785df",
+        "rev": "c7b264db47c40785ef322d08eecf97545be79a8f",
         "type": "github"
       },
       "original": {
