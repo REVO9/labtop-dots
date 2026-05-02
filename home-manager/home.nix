@@ -39,7 +39,7 @@ in {
     wvkbd
     thunderbird
     libreoffice
-    wasistlos
+    karere
     evince
     zathura
     tectonic
