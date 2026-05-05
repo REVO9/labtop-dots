@@ -4,7 +4,7 @@
   inputs = {
     lecture-mgr.url = "github:REVO9/lecture-mgr/";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland/v0.54.3";
+    hyprland.url = "github:hyprwm/Hyprland/main";
     matcha.url = "git+https://codeberg.org/QuincePie/matcha.git";
     hyprgrass = {
       url = "github:horriblename/hyprgrass";
