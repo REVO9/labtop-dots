@@ -16,12 +16,10 @@ abort() {
 
 cp $FLAKE_LOCK_PATH $FLAKE_LOCK_BAK_PATH || exit 1
 
-nix flake update --flake $FLAKE_PATH
+nix flake update --flake $FLAKE_PATH || exit 1
 
 sudo nixos-rebuild switch --flake $FLAKE_PATH || abort
-cd $FLAKE_PATH
-git commit $FLAKE_LOCK_PATH -m "updated flake" || abort
-cd $PWD
+git -C $FLAKE_PATH commit $FLAKE_LOCK_PATH -m "updated flake" || abort
 rm $FLAKE_LOCK_BAK_PATH
 echo "Success"
 exit 0
