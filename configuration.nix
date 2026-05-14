@@ -12,6 +12,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./sshfs.nix
+    ./build-machines.nix
   ];
 
   # Bootloader.

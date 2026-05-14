@@ -154,14 +154,11 @@ in {
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
     plugins = with pkgs; [
-      inputs.hyprgrass.packages.${pkgs.system}.default
+      # inputs.hyprgrass.packages.${pkgs.system}.default
     ];
 
-    settings = {
-      source = [
-        "~/.config/hypr/main.conf"
-      ];
-    };
+    configType = "lua";
+    extraConfig = ''require("main")'';
   };
 
   fonts.fontconfig.enable = true;
