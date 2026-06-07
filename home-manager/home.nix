@@ -57,6 +57,7 @@ in {
     prusa-slicer
     signal-desktop
     inputs.lecture-mgr.packages.${system}.default
+    krita
 
     # terminal fluff
     cava
