@@ -7,7 +7,7 @@
     hyprland.url = "github:hyprwm/Hyprland/main";
     matcha.url = "git+https://codeberg.org/QuincePie/matcha.git";
     hyprgrass = {
-      url = "github:horriblename/hyprgrass";
+      url = "github:horriblename/hyprgrass/lua-func";
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
 
