@@ -53,7 +53,6 @@ in {
     qutebrowser
     eduvpn-client
     prismlauncher
-    openscad
     prusa-slicer
     signal-desktop
     inputs.lecture-mgr.packages.${system}.default

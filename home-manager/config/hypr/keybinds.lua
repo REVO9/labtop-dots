@@ -54,49 +54,69 @@ hl.bind(mainMod .. "+  SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a"))
 
 hl.bind(mainMod .. "+ Z", hl.dsp.dpms("toggle"))
 
-hl.plugin = {
-    touch_gestures = {
-        sensitivity = 4.0,
+hl.config({
+    plugin = {
+        hyprgrass = {
+            sensitivity = 4.0,
 
-        workspace_swipe_fingers = 3,
+            long_press_delay = 400,
 
-        long_press_delay = 400,
+            resize_on_border_long_press = true,
 
-        resize_on_border_long_press = true,
+            edge_margin = 10,
+        }
+    }
+})
 
-        edge_margin = 10,
+-- swipe down from left edge
+hl.plugin.hyprgrass.bind {
+    pattern = { kind = "edge", origin = "r", direction = "d", },
+    action = hl.dsp.exec_cmd(" pactl set-sink-volume @DEFAULT_SINK@ -4%")
+}
+hl.plugin.hyprgrass.bind {
+    pattern = { kind = "edge", origin = "r", direction = "u", },
+    action = hl.dsp.exec_cmd(" pactl set-sink-volume @DEFAULT_SINK@ +4%")
+}
 
-        emulate_touchpad_swipe = false,
+hl.plugin.hyprgrass.bind {
+    pattern = { kind = "edge", origin = "l", direction = "r", },
+    action = hl.dsp.exec_cmd("kill -34 $(pidof wvkbd-mobintl)")
+}
 
-        experimental = {
-            send_cancel = 0,
-        },
+hl.plugin.hyprgrass.bind {
+    pattern = { kind = "edge", origin = "r", direction = "l", },
+    action = hl.dsp.exec_cmd("swaync-client -t")
+}
 
+-- hyprgrass-bind = , edge:u:d, exec, hyprctl keyword monitor ,preferred,auto,auto,transform,2
+-- hyprgrass-bind = , edge:d:u, exec, hyprctl keyword monitor ,preferred,auto,auto,transform,0
+
+hl.config {
+    gestures = {
+        workspace_swipe_touch = true,
+        workspace_swipe_cancel_ratio = 0.15,
     }
 }
 
--- swipe down from left edge
--- hl.plugin.hyprgrass.bind {
---     pattern = { kind = "edge", origin = "r", direction = "d", },
---     action = hl.dsp.exec_cmd(" pactl set-sink-volume @DEFAULT_SINK@ -4%")
--- }
--- hl.plugin.hyprgrass.bind {
---     pattern = { kind = "edge", origin = "r", direction = "u", },
---     action = hl.dsp.exec_cmd(" pactl set-sink-volume @DEFAULT_SINK@ +4%")
--- }
---
--- hyprgrass-bind = , edge:l:r, exec, kill -34 $(pidof wvkbd-mobintl)
---
--- hyprgrass-bind = , edge:r:l, exec, swaync-client -t
---
--- hyprgrass-bind = , edge:u:d, exec, hyprctl keyword monitor ,preferred,auto,auto,transform,2
--- hyprgrass-bind = , edge:d:u, exec, hyprctl keyword monitor ,preferred,auto,auto,transform,0
--- # swipe down with 4 fingers
--- hyprgrass-bind = , swipe:4:d, killactive
--- hyprgrass-bind = , swipe:4:u, exec, kill -USR2 $(pidof wvkbd-mobintl) && $menu
---
--- hyprgrass-bind = , swipe:3:u, togglefloating
--- hyprgrass-bind = , swipe:3:d, fullscreen
---
--- # longpress can trigger mouse binds:
--- hyprgrass-bindm = , longpress:3, movewindow
+hl.plugin.hyprgrass.gesture {
+    pattern = { kind = "swipe", fingers = 3, direction = "horizontal", },
+    action = "workspace"
+}
+hl.plugin.hyprgrass.gesture {
+    pattern = { kind = "pinch", fingers = 3, direction = "pinchout", },
+    action = "close"
+}
+hl.plugin.hyprgrass.gesture {
+    pattern = { kind = "swipe", fingers = 4, direction = "u", },
+    action = function()
+        hl.dispatch(hl.dsp.exec_cmd("kill -USR2 $(pidof wvkbd-mobintl) && " .. Menu))
+    end
+}
+hl.plugin.hyprgrass.gesture {
+    pattern = { kind = "pinch", fingers = 3, direction = "pinchin", },
+    action = "fullscreen"
+}
+hl.plugin.hyprgrass.gesture {
+    pattern = { kind = "swipe", fingers = 3, direction = "u", },
+    action = "float"
+}
