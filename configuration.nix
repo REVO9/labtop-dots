@@ -126,7 +126,6 @@
     zoxide
     libnotify
     bottom
-    inputs.matcha
     gamescope
 
     vesktop

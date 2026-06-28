@@ -93,7 +93,6 @@ hl.plugin.hyprgrass.bind {
 
 hl.config {
     gestures = {
-        workspace_swipe_touch = true,
         workspace_swipe_cancel_ratio = 0.15,
     }
 }
