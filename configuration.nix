@@ -70,7 +70,6 @@
     description = "Luis Danker";
     extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
-    packages = with pkgs; [];
   };
 
   home-manager = {
@@ -128,7 +127,6 @@
     bottom
     gamescope
 
-    vesktop
     eog
     hyprpaper
     hypridle
