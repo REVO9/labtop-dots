@@ -57,6 +57,7 @@ in {
     signal-desktop
     inputs.lecture-mgr.packages.${system}.default
     krita
+    jellyfin-desktop
 
     # terminal fluff
     cava
