@@ -4,7 +4,7 @@
   inputs = {
     lecture-mgr.url = "github:REVO9/lecture-mgr/";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland/v0.55.4";
+    hyprland.url = "github:hyprwm/Hyprland/v0.56.0";
     hyprgrass = {
       url = "github:horriblename/hyprgrass";
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
