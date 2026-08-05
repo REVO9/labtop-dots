@@ -591,7 +591,24 @@
         "hyprland": "hyprland",
         "lecture-mgr": "lecture-mgr",
         "nixpkgs": "nixpkgs_3",
-        "rnote-pinned": "rnote-pinned"
+        "rnote-pinned": "rnote-pinned",
+        "rose-pine-discord": "rose-pine-discord"
+      }
+    },
+    "rose-pine-discord": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1782512699,
+        "narHash": "sha256-pwiFCJClOl5IvnbnT/bZtshK3nEAq7bdXtEdnHcTFIk=",
+        "owner": "rose-pine",
+        "repo": "discord",
+        "rev": "e31f74b5a4e9c56a3e4762350f89d20881f76013",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rose-pine",
+        "repo": "discord",
+        "type": "github"
       }
     },
     "rust-analyzer-src": {

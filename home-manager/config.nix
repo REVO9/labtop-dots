@@ -1,8 +1,8 @@
 {
-  config,
-  pkgs,
+  inputs,
   ...
-}: {
+}:
+{
   xdg.configFile = {
     "hypr" = {
       source = ./config/hypr;
@@ -16,14 +16,7 @@
       source = ./config/gitui;
       recursive = true;
     };
-    "vesktop/themes/rose-pine.css".source =
-      pkgs.fetchFromGitHub {
-        owner = "rose-pine";
-        repo = "discord";
-        rev = "main";
-        sha256 = "00sz681dd3jm1vjga6wcj2jv0ninm8bms9jkz5fax1p6nm6bvlrr";
-      }
-      + "/dist/rose-pine.css";
+    "vesktop/themes/rose-pine.css".source = inputs.rose-pine-discord + "/dist/rose-pine.css";
     "wofi" = {
       source = ./config/wofi;
       recursive = true;
@@ -69,7 +62,7 @@
 
     waybar = {
       enable = true;
-      settings = {};
+      settings = { };
     };
 
     git = {

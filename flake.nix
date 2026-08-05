@@ -15,6 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    rose-pine-discord = {
+        url = "github:rose-pine/discord";
+        flake = false;
+    };
+
     rnote-pinned = {
       url = "github:nixos/nixpkgs/2a97eb701ae3357d9e3c4133b7bc3feab06743f0";
       flake = false;
