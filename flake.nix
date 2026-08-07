@@ -16,20 +16,19 @@
     };
 
     rose-pine-discord = {
-        url = "github:rose-pine/discord";
-        flake = false;
+      url = "github:rose-pine/discord";
+      flake = false;
     };
 
-    rnote-pinned = {
-      url = "github:nixos/nixpkgs/2a97eb701ae3357d9e3c4133b7bc3feab06743f0";
-      flake = false;
+    rnote-patched = { url = "./home-manager/rnote-patched";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = {
     self,
     nixpkgs,
-    rnote-pinned,
+    rnote-patched,
     ...
   } @ inputs: {
     # use "nixos", or your hostname as the name of the configuration

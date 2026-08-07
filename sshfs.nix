@@ -3,8 +3,9 @@
   pkgs,
   inputs,
   ...
-}: {
-  environment.systemPackages = with pkgs; [sshfs];
+}:
+{
+  environment.systemPackages = with pkgs; [ sshfs ];
 
   fileSystems."/run/media/revo/archie" = {
     device = "revo@192.168.0.177:/home/revo";

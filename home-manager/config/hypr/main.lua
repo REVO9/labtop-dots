@@ -77,6 +77,9 @@ hl.config({
     input = {
         kb_layout = "us",
         kb_variant = "altgr-intl",
+        tablettool = {
+            eraser_button_mode = 1,
+        }
     },
 })
 

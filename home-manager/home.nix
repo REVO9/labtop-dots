@@ -5,10 +5,6 @@
   inputs,
   ...
 }: let
-  pinnedPkgs = import inputs.rnote-pinned {
-    system = pkgs.system;
-    config.allowUnfree = true;
-  };
 in {
   imports = [
     ./theme.nix
@@ -35,7 +31,7 @@ in {
     slurp
     imagemagick
     mpv
-    pinnedPkgs.rnote
+    inputs.rnote-patched.packages.${system}.default
     wvkbd
     thunderbird
     libreoffice

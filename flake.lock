@@ -567,20 +567,38 @@
         "type": "github"
       }
     },
-    "rnote-pinned": {
+    "rnote-patched": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rnote-repo": "rnote-repo",
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "path": "./home-manager/rnote-patched",
+        "type": "path"
+      },
+      "original": {
+        "path": "./home-manager/rnote-patched",
+        "type": "path"
+      },
+      "parent": []
+    },
+    "rnote-repo": {
       "flake": false,
       "locked": {
-        "lastModified": 1762559994,
-        "narHash": "sha256-GtRKDm1o1QiOMEYWZCbXvQhTsXjdfd472QsVh4qwwbM=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "2a97eb701ae3357d9e3c4133b7bc3feab06743f0",
+        "lastModified": 1780171224,
+        "narHash": "sha256-IsTBiw8nG/nkYmKmEM1h2LM/BqfSE5kKs1MbdM8k6oc=",
+        "owner": "alberto-is",
+        "repo": "rnote",
+        "rev": "7477e7d118928e36b86d3e870a117913783b1116",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "2a97eb701ae3357d9e3c4133b7bc3feab06743f0",
+        "owner": "alberto-is",
+        "ref": "fix-stylus-hover-pan",
+        "repo": "rnote",
         "type": "github"
       }
     },
@@ -591,7 +609,7 @@
         "hyprland": "hyprland",
         "lecture-mgr": "lecture-mgr",
         "nixpkgs": "nixpkgs_3",
-        "rnote-pinned": "rnote-pinned",
+        "rnote-patched": "rnote-patched",
         "rose-pine-discord": "rose-pine-discord"
       }
     },
@@ -625,6 +643,27 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "rnote-patched",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786076960,
+        "narHash": "sha256-jfR6OhwurCKn1tREyfOcK/Omxf1Q/DzDDFbnEr1mBLs=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "57a23bfaf4f7017267294b161175db1e32eb1c85",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
         "type": "github"
       }
     },
