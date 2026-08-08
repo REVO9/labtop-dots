@@ -123,6 +123,7 @@
     coursier
     scala
     tree-sitter
+    nix-output-monitor
 
     wofi
 
