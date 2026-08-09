@@ -97,11 +97,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784725727,
-        "narHash": "sha256-J5+C9wsO0lhDyUalQzfplDbRjyHDYeEH5+9sdyXtwa8=",
+        "lastModified": 1786031233,
+        "narHash": "sha256-TIDlLTLI1/pB7IqgjzcKQjpODQsZE2oII4XGG9B6KjI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "041a999e8c1c5b731913855909e68d30ca69b8e0",
+        "rev": "7834e82588860aaf780cec1366524456a70898d7",
         "type": "github"
       },
       "original": {
@@ -180,11 +180,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784737492,
-        "narHash": "sha256-r0kKcEid5NcolUgfE7rI1TT3VAMxrnjqzGLIVs/lbI8=",
+        "lastModified": 1785671875,
+        "narHash": "sha256-peyHa1oTalU8mZwUXrc+KNVMh2cd4uKYrGR0MDzzld0=",
         "owner": "horriblename",
         "repo": "hyprgrass",
-        "rev": "36df29f57f94a77b4d5dcf91100f620a46663fa9",
+        "rev": "65ba1130c63e440fa4bdbf8f5099716084860f4a",
         "type": "github"
       },
       "original": {
@@ -531,11 +531,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1784497964,
-        "narHash": "sha256-vlHUuqAcbcH2RKmHbPiuQzbv1pnzzavXnI62RD0bqCU=",
+        "lastModified": 1786106723,
+        "narHash": "sha256-zDSUbpoeo/9ZmD2+wXnzxoo1+uhL8vxc0b8yuYMKYq0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "241313f4e8e508cb9b13278c2b0fa25b9ca27163",
+        "rev": "f13ff45afd1bb73e640eaa08a7066dbed07e3238",
         "type": "github"
       },
       "original": {
@@ -576,11 +576,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "path": "./home-manager/rnote-patched",
+        "path": "./sub_flakes/rnote-patched",
         "type": "path"
       },
       "original": {
-        "path": "./home-manager/rnote-patched",
+        "path": "./sub_flakes/rnote-patched",
         "type": "path"
       },
       "parent": []
@@ -610,7 +610,8 @@
         "lecture-mgr": "lecture-mgr",
         "nixpkgs": "nixpkgs_3",
         "rnote-patched": "rnote-patched",
-        "rose-pine-discord": "rose-pine-discord"
+        "rose-pine-discord": "rose-pine-discord",
+        "rose-pine-gtk-theme": "rose-pine-gtk-theme"
       }
     },
     "rose-pine-discord": {
@@ -628,6 +629,39 @@
         "repo": "discord",
         "type": "github"
       }
+    },
+    "rose-pine-gtk": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762352813,
+        "narHash": "sha256-58HfkFvflQhiJzfHcJCihSE9YbxbD6Koe0/aT+PVv4w=",
+        "owner": "rose-pine",
+        "repo": "gtk",
+        "rev": "3a11f84e11685aacaa749deea1e9f02872b99fdf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rose-pine",
+        "repo": "gtk",
+        "type": "github"
+      }
+    },
+    "rose-pine-gtk-theme": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rose-pine-gtk": "rose-pine-gtk"
+      },
+      "locked": {
+        "path": "./sub_flakes/rose-pine-gtk-theme",
+        "type": "path"
+      },
+      "original": {
+        "path": "./sub_flakes/rose-pine-gtk-theme",
+        "type": "path"
+      },
+      "parent": []
     },
     "rust-analyzer-src": {
       "flake": false,
@@ -654,11 +688,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786076960,
-        "narHash": "sha256-jfR6OhwurCKn1tREyfOcK/Omxf1Q/DzDDFbnEr1mBLs=",
+        "lastModified": 1786160316,
+        "narHash": "sha256-oLoc3ZLg1LX/S5Jb3v6MrF415AzDyC4vgeWy9UcYTQk=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "57a23bfaf4f7017267294b161175db1e32eb1c85",
+        "rev": "4e1c940c96560ceab7c547f89642231371a66646",
         "type": "github"
       },
       "original": {

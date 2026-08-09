@@ -24,7 +24,7 @@
     };
     gtk3.theme = {
       name = "rose-pine";
-      package = pkgs.rose-pine-gtk-theme;
+      package = inputs.rose-pine-gtk-theme.packages.${system}.default;
     };
     gtk4.theme = {
       name = "rose-pine";

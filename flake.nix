@@ -20,7 +20,13 @@
       flake = false;
     };
 
-    rnote-patched = { url = "./home-manager/rnote-patched";
+    rnote-patched = { 
+      url = "./sub_flakes/rnote-patched";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    rose-pine-gtk-theme =  { 
+      url = "./sub_flakes/rose-pine-gtk-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
