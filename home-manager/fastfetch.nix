@@ -1,10 +1,12 @@
-{lib, ...}: let
+{ lib, ... }:
+let
   user = "revo";
   host = "framework";
 
   content-width = builtins.stringLength (user + host);
   extension = lib.concatStrings (lib.replicate (content-width - 7) "─");
-in {
+in
+{
   programs.fastfetch = {
     enable = true;
     settings = {

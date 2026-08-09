@@ -10,7 +10,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, rose-pine-gtk }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      rose-pine-gtk,
+    }:
     let
       systems = [
         "x86_64-linux"
@@ -20,7 +25,8 @@
       forAllSystems = nixpkgs.lib.genAttrs systems;
     in
     {
-      packages = forAllSystems (system:
+      packages = forAllSystems (
+        system:
         let
           pkgs = nixpkgs.legacyPackages.${system};
         in
@@ -31,15 +37,15 @@
 
             src = rose-pine-gtk;
 
-            buildInputs = [
-              pkgs.gnome-themes-extra # adwaita engine for Gtk2
-              pkgs.gtk_engines       # pixmap engine for Gtk2
-            ];
-
-            propagatedUserEnvPkgs = [
-              # don't need that
-              # pkgs.gtk-engine-murrine # murrine engine for Gtk2
-            ];
+            # don't need that
+            # buildInputs = [
+            #   pkgs.gnome-themes-extra # adwaita engine for Gtk2
+            #   pkgs.gtk_engines       # pixmap engine for Gtk2
+            # ];
+            #
+            # propagatedUserEnvPkgs = [
+            #   pkgs.gtk-engine-murrine # murrine engine for Gtk2
+            # ];
 
             # Avoid the makefile which is only for theme maintainers.
             dontBuild = true;

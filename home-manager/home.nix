@@ -4,8 +4,10 @@
   lib,
   inputs,
   ...
-}: let
-in {
+}:
+let
+in
+{
   imports = [
     ./theme.nix
     ./config.nix
@@ -81,7 +83,7 @@ in {
 
   xdg.dataFile."fonts/Rodondo.otf".source = ./fonts/Rodondo.otf;
 
-  home.sessionVariables = {};
+  home.sessionVariables = { };
 
   home.sessionPath = [
     "$HOME/.local/bin"
@@ -108,7 +110,11 @@ in {
       GTK_THEME=Adwaita:dark ${pkgs.pavucontrol}/bin/pavucontrol "$@"
     ''}/bin/pavucontrol %U";
     icon = "multimedia-volume-control";
-    categories = ["AudioVideo" "Audio" "Mixer"];
+    categories = [
+      "AudioVideo"
+      "Audio"
+      "Mixer"
+    ];
   };
 
   xdg.portal = {
@@ -148,10 +154,11 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
     plugins = with pkgs; [
-      inputs.hyprgrass.packages.${pkgs.system}.default
+      # inputs.hyprgrass.packages.${pkgs.system}.default
     ];
 
     configType = "lua";

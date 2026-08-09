@@ -20,31 +20,33 @@
       flake = false;
     };
 
-    rnote-patched = { 
+    rnote-patched = {
       url = "./sub_flakes/rnote-patched";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    rose-pine-gtk-theme =  { 
+    rose-pine-gtk-theme = {
       url = "./sub_flakes/rose-pine-gtk-theme";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    rnote-patched,
-    ...
-  } @ inputs: {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
-    nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-      ];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      rnote-patched,
+      ...
+    }@inputs:
+    {
+      # use "nixos", or your hostname as the name of the configuration
+      # it's a better practice than "default" shown in the video
+      nixosConfigurations.framework = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
     };
-  };
 }
