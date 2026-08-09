@@ -2,12 +2,21 @@
   description = "Nixos config flake";
 
   inputs = {
-    lecture-mgr.url = "github:REVO9/lecture-mgr/";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland/v0.56.0";
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprgrass = {
       url = "github:horriblename/hyprgrass";
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    };
+
+    lecture-mgr = {
+      url = "github:REVO9/lecture-mgr/";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     home-manager = {
