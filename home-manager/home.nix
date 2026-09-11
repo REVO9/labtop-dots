@@ -162,7 +162,10 @@ in
     ];
 
     configType = "lua";
-    extraConfig = ''require("main")'';
+    extraConfig = ''
+        require("main")
+        -- require("hyprgrass")
+    '';
   };
 
   fonts.fontconfig.enable = true;

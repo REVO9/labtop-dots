@@ -6,7 +6,7 @@
 {
   nix.buildMachines = [
     {
-      hostName = "192.168.0.177";
+      hostName = "nixremote1";
       system = "x86_64-linux";
       protocol = "ssh-ng";
       # if the builder supports building for multiple architectures,
@@ -21,8 +21,6 @@
         "kvm"
       ];
       mandatoryFeatures = [ ];
-      sshKey = "/home/revo/.ssh/nixremote";
-      sshUser = "nixremote";
     }
   ];
   nix.distributedBuilds = true;

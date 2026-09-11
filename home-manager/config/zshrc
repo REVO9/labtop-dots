@@ -78,30 +78,17 @@ alias c='clear'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias synthwaveboy="sus 'mpv https://www.youtube.com/watch?v=4xDzrJKXOOY'"
+alias synthwaveboy="mpv 'https://www.youtube.com/watch?v=4xDzrJKXOOY' &!"
 alias pipes=pipes.sh
 alias matrix=unimatrix
-sus() {
-    local args=("$1")
-
-    if [ $# -gt 1 ]; then
-        case "$2" in
-            /*) args+=("$2");;
-            ~*) args+=("$HOME${2:1}");;
-            *) args+=("$PWD/$2");;
-        esac
-    fi
-
-    hyprctl -q dispatch exec "${args[@]}"
-}
 alias unimatrix="unimatrix -n -s 96 -l o"
 mkcd() {
     mkdir "$1"
     cd "$1"
 }
 alias icat="wezterm imgcat"
-alias fm="sus thunar ."
-alias fme="sus thunar .; exit"
+alias fm="thunar . &!"
+alias fme="thunar . &!; exit"
 alias yippie='tplay -l ~/Videos/yippie.gif'
 
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh

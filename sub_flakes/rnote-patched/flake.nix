@@ -10,7 +10,7 @@
     };
 
     rnote-repo = {
-      url = "github:alberto-is/rnote/fix-stylus-hover-pan";
+      url = "github:flxzt/rnote/main";
       flake = false;
     };
   };
@@ -45,7 +45,7 @@
 
           cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
             inherit src;
-            hash = "sha256-eDKyA8LaH+nvDcCG74ucWYSJc8qLmps1xz3WPHoOJ0w=";
+            hash = "sha256-z/68zpjHSwtTDmYtDANRUnulG10GOeZjHbdAcZroyUE=";
           };
 
           nativeBuildInputs = with pkgs; [
