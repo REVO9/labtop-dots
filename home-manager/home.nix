@@ -158,13 +158,13 @@ in
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
 
     plugins = with pkgs; [
-      # inputs.hyprgrass.packages.${pkgs.system}.default
+      inputs.hyprgrass.packages.${pkgs.system}.default
     ];
 
     configType = "lua";
     extraConfig = ''
         require("main")
-        -- require("hyprgrass")
+        require("hyprgrass")
     '';
   };
 

@@ -18,7 +18,8 @@ cp $FLAKE_LOCK_PATH $FLAKE_LOCK_BAK_PATH || exit 1
 
 nix flake update --flake $FLAKE_PATH || exit 1
 
-sudo nixos-rebuild switch --flake $FLAKE_PATH || abort
+sudo -v
+sudo nixos-rebuild switch --flake $FLAKE_PATH --log-format internal-json |& nom --json || abort
 git -C $FLAKE_PATH commit $FLAKE_LOCK_PATH -m "updated flake" || abort
 rm $FLAKE_LOCK_BAK_PATH
 echo "Success"
