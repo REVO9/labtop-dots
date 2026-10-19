@@ -67,8 +67,12 @@
 
     git = {
       enable = true;
-      userName = "REVO9";
-      userEmail = "luisdanker@gmx.de";
+      settings = {
+        user = {
+          name = "REVO9";
+          email = "luisdanker@gmx.de";
+        };
+      };
     };
 
     vesktop = {

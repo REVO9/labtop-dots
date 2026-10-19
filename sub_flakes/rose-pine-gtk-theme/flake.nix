@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     rose-pine-gtk = {
-      url = "github:rose-pine/gtk?tag=v2.2.0";
+      url = "github:rose-pine/gtk/v2.2.0";
       flake = false;
     };
   };
