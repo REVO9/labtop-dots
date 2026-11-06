@@ -54,3 +54,4 @@ hl.bind(mainMod .. "+  SHIFT + P", hl.dsp.exec_cmd("hyprpicker -a"))
 
 hl.bind(mainMod .. "+ Z", hl.dsp.dpms("toggle"))
 
+hl.bind(mainMod .. "+ period", hl.dsp.exec_cmd("~/.scripts/lecture-mgr-wofi.sh"))
