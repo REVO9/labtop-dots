@@ -40,8 +40,6 @@ in
     karere
     evince
     zathura
-    tectonic
-    texlab
     inkscape
     gnome-network-displays
     songrec
