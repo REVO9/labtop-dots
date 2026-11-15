@@ -46,7 +46,7 @@ in
     rsync
     obs-studio
     typst
-    qutebrowser
+    chromium
     eduvpn-client
     prismlauncher
     prusa-slicer
