@@ -210,6 +210,7 @@
   services.logind.settings.Login = {
     HandlePowerKey = "ignore";
   };
+  services.gnome.gnome-keyring.enable = true;
   systemd = {
     user.services.hyprpolkitagent = {
       description = "hyprpolkitagent";
